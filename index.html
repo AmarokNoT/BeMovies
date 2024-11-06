@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logoSite">
+                <p src="" alt="" class="logo"><span>be</span>movies</p>
+            </div>
+            <ul class="nav">
+                <li>Search</li>
+                <li>Latest</li>
+                <li>Genres</li>
+                <li>Register</li>
+                <li>Signin</li>
+            </ul>
+        </div>
+    </header>
+    <div class="container">
+        <div class="searchBar">
+            <form onsubmit="event.preventDefault();" role="search">
+                <label for="search">Search for stuff</label>
+                <input id="search" type="search" placeholder="Search..." autofocus required />
+                <button type="submit">Go</button>    
+            </form>
+        </div>
+        <div class="sliderResult">
+            <h3>result for ''</h3>
+            <div class="cards">
+                <div class="card">
+                    <img src="asset/ai-generated-8520107_1280.jpg" alt="">
+                </div>
+                <div class="card">
+                    <img src="asset/ninja-7701126_1280.jpg" alt="">
+                </div>
+                <div class="card">
+                    <img src="asset/sunset-7628289_1280.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="sliderLatest">
+            <h3>latest releases</h3>
+            <div class="cards">
+                <div class="card">
+                    <img src="asset/ai-generated-8520107_1280.jpg" alt="">
+                </div>
+                <div class="card">
+                    <img src="asset/ninja-7701126_1280.jpg" alt="">
+                </div>
+                <div class="card">
+                    <img src="asset/sunset-7628289_1280.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="sliderGenre">
+            <h3>Movies by genre</h3>
+                <ul class="movieNav">
+                    <li>Comedy</li>
+                    <li>Drama</li>
+                    <li>Action</li>
+                    <li>Fantasy</li>
+                    <li>Animation</li>
+                </ul>
+                <hr>
+      
+            <div class="cards">
+                <div class="card">
+                    <img src="asset/ai-generated-8520107_1280.jpg" alt="">
+                </div>
+                <div class="card">
+                    <img src="asset/ninja-7701126_1280.jpg" alt="">
+                </div>
+                <div class="card">
+                    <img src="asset/sunset-7628289_1280.jpg" alt="">
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+    <footer>
+        
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
