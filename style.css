@@ -42,13 +42,20 @@ header, footer {
   background-color: #141517;
 }
 
+footer {
+  height: 186px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .container {
   max-width: 1110px;
   padding: 0 10px;
   margin: 0 auto;
 }
 
-.logoSite p {
+.logoSite p, .logoSiteFooter p {
   font-family: Inria Sans;
   font-size: 36px;
   font-weight: 700;
@@ -57,11 +64,20 @@ header, footer {
   text-transform: uppercase;
   color: white;
 }
-.logoSite p span {
+.logoSite p span, .logoSiteFooter p span {
   color: red;
 }
 
-.navbar {
+.copyright p {
+  font-family: Inria Sans;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 16.79px;
+  text-align: left;
+  color: #B8B8B8;
+}
+
+.navbar, .navbarBottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -69,13 +85,13 @@ header, footer {
   width: 100%;
   padding: 40px;
 }
-.navbar .nav {
+.navbar .nav, .navbarBottom .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 29px;
 }
-.navbar .nav li {
+.navbar .nav li, .navbarBottom .nav li {
   font-family: Inria Sans;
   font-size: 14px;
   font-weight: 700;
@@ -84,6 +100,11 @@ header, footer {
   text-align: left;
   text-transform: uppercase;
   color: white;
+  cursor: pointer;
+}
+
+.navbarBottom {
+  justify-content: space-evenly;
 }
 
 .searchBar {
@@ -176,11 +197,37 @@ label {
      object-fit: cover;
 }
 
+.sliderLatest, .sliderResult {
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
 .sliderGenre {
   text-align: center;
 }
+.sliderGenre h3 {
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
 .sliderGenre ul {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+  gap: 75px;
+}
+.sliderGenre ul li:hover {
+  background-color: #CC0000;
+  padding: 5px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.sliderGenre ul li:hover:active {
+  background-color: #CC0000;
+  padding: 5px;
+  border-radius: 8px;
+}
+.sliderGenre hr {
+  width: 599px;
+  margin-bottom: 30px;
+  margin-top: 20px;
 }/*# sourceMappingURL=style.css.map */

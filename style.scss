@@ -43,13 +43,20 @@ html {
     background-color: #141517;
   }
 
+  footer {
+    height: 186px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .container {
     max-width: 1110px;
     padding: 0 10px;
     margin: 0 auto;
   }
 
-.logoSite p {
+.logoSite p, .logoSiteFooter p {
     font-family: Inria Sans;
     font-size: 36px;
     font-weight: 700;
@@ -60,10 +67,20 @@ html {
         span {
             color: red;
         }
-
 }
 
-  .navbar {
+  .copyright p {
+  font-family: Inria Sans;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 16.79px;
+  text-align: left;
+  color: #B8B8B8;
+
+  }
+
+
+  .navbar, .navbarBottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -86,9 +103,14 @@ html {
             text-align: left;
             text-transform: uppercase;
             color: white;
+            cursor: pointer;
 
         }
     }
+  }
+
+  .navbarBottom {
+    justify-content: space-evenly;
   }
 
   .searchBar {
@@ -176,13 +198,43 @@ html {
 
 }
 
+.sliderLatest, .sliderResult {
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
 .sliderGenre {
     text-align: center;
 
+    h3 {
+      margin-bottom: 50px;
+      margin-top: 50px;
+    }
+
     ul {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: center;
         align-items: center;
+        gap: 75px;
+
+        li:hover {
+          background-color: #CC0000;
+          padding: 5px;
+          border-radius: 8px;
+          cursor: pointer;
+
+          &:active {
+          background-color: #CC0000;
+          padding: 5px;
+          border-radius: 8px;
+          }
+        }
+    }
+
+    hr {
+      width: 599px;
+      margin-bottom: 30px;
+      margin-top: 20px;
     }
 }
   
