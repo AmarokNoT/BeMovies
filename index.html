@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href=" https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css " rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
+    <div class="overlay hidden"></div>
     <header>
         <div class="navbar">
             <div class="logoSite">
@@ -31,31 +33,47 @@
         </div>
         <div class="sliderResult">
             <h3>result for ''</h3>
-            <div class="cards">
-                <div class="card">
-                    <img src="asset/ai-generated-8520107_1280.jpg" alt="">
+            <div id="#slider1" class="splide" aria-label="Splide Basic HTML Example">
+                <div class="splide__track">
+                    <div class="cards splide__list  ">
+                        <div class="card splide__slide ">
+                            <img src="asset/ai-generated-8520107_1280.jpg" alt="">
+                            <div class="infos">
+                                <h2>Naruto</h2>
+                                <p class="year">1993</p>
+                                <p class="genre">seinen</p>
+                                <i class="fa-solid fa-star"></i>
+                                <p class="note">4.6</p>
+                            </div>
+                        </div>
+                        <div class="card splide__slide ">
+                            <img src="asset/ai-generated-8520107_1280.jpg" alt="">
+                        </div>
+                        <div class="card splide__slide ">
+                            <img src="asset/ai-generated-8520107_1280.jpg" alt="">
+                        </div>
+                    </div>
                 </div>
-                <div class="card">
-                    <img src="asset/ninja-7701126_1280.jpg" alt="">
-                </div>
-                <div class="card">
-                    <img src="asset/sunset-7628289_1280.jpg" alt="">
-                </div>
-            </div>
+            </div> 
         </div>
+        
         <div class="sliderLatest">
             <h3>latest releases</h3>
-            <div class="cards">
-                <div class="card">
-                    <img src="asset/ai-generated-8520107_1280.jpg" alt="">
+            <div id="#slider2" class="splide" aria-label="Splide Basic HTML Example">
+                <div class="splide__track">
+                    <div class="cards splide__list  ">
+                        <div class="card splide__slide ">
+                            <img src="asset/ai-generated-8520107_1280.jpg" alt="">
+                        </div>
+                        <div class="card splide__slide ">
+                            <img src="asset/ninja-7701126_1280.jpg" alt="">
+                        </div>
+                        <div class="card splide__slide ">
+                            <img src="asset/sunset-7628289_1280.jpg" alt="">
+                        </div>
+                    </div>
                 </div>
-                <div class="card">
-                    <img src="asset/ninja-7701126_1280.jpg" alt="">
-                </div>
-                <div class="card">
-                    <img src="asset/sunset-7628289_1280.jpg" alt="">
-                </div>
-            </div>
+            </div> 
         </div>
         <div class="sliderGenre">
             <h3>Movies by genre</h3>
@@ -68,20 +86,23 @@
                 </ul>
                 <hr>
       
-            <div class="cards">
-                <div class="card">
-                    <img src="asset/ai-generated-8520107_1280.jpg" alt="">
-                </div>
-                <div class="card">
-                    <img src="asset/ninja-7701126_1280.jpg" alt="">
-                </div>
-                <div class="card">
-                    <img src="asset/sunset-7628289_1280.jpg" alt="">
-                </div>
-            </div>
+                <div id="#slider3" class="splide" aria-label="Splide Basic HTML Example">
+                    <div class="splide__track">
+                        <div class="cards splide__list  ">
+                            <div class="card splide__slide ">
+                                <img src="asset/ai-generated-8520107_1280.jpg" alt="">
+                            </div>
+                            <div class="card splide__slide ">
+                                <img src="asset/ninja-7701126_1280.jpg" alt="">
+                            </div>
+                            <div class="card splide__slide ">
+                                <img src="asset/sunset-7628289_1280.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div> 
         </div>
 
-        
     </div>
     <footer>
         <div class="navbarBottom">
@@ -100,6 +121,21 @@
             </div>
         </div>
     </footer>
+    <script src="https://kit.fontawesome.com/e54148ef25.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script src="script.js"></script>
+    <script>
+        document.addEventListener( 'DOMContentLoaded', function() {
+            var elms = document.getElementsByClassName( 'splide' );
+
+            for ( var i = 0; i < elms.length; i++ ) {
+            new Splide( elms[ i ], {
+                type   : 'loop',
+                perPage: 5,
+                focus  : 'center',
+            } ).mount();
+            }
+        } );
+    </script>
 </body>
 </html>

@@ -187,14 +187,17 @@ label {
   padding: 20px;
   gap: 20px;
 }
-.cards .card:hover {
-  opacity: 0.1;
+.cards .card {
+  position: relative;
 }
 .cards .card img {
   width: 100%;
   height: 351px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+.cards .card img:hover {
+  opacity: 0.1;
 }
 
 .sliderLatest, .sliderResult {
@@ -204,6 +207,7 @@ label {
 
 .sliderGenre {
   text-align: center;
+  margin-bottom: 50px;
 }
 .sliderGenre h3 {
   margin-bottom: 50px;
@@ -215,19 +219,81 @@ label {
   align-items: center;
   gap: 75px;
 }
+.sliderGenre ul li {
+  padding: 3px;
+}
 .sliderGenre ul li:hover {
   background-color: #CC0000;
-  padding: 5px;
   border-radius: 8px;
   cursor: pointer;
-}
-.sliderGenre ul li:hover:active {
-  background-color: #CC0000;
-  padding: 5px;
-  border-radius: 8px;
 }
 .sliderGenre hr {
   width: 599px;
   margin-bottom: 30px;
   margin-top: 20px;
+}
+
+.infos {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  z-index: 999;
+  left: 0%;
+  top: 0%;
+}
+.infos h2 {
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24.2px;
+  text-align: center;
+}
+.infos .year {
+  color: #B0B0B0;
+  font-weight: 700;
+  font-family: Inter;
+  font-size: 20px;
+  line-height: 24.2px;
+  text-align: center;
+}
+.infos .genre {
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16.94px;
+  text-align: center;
+}
+.infos i {
+  color: #CC0000;
+  font-size: xx-large;
+}
+.infos .note {
+  color: #CC0000;
+  font-family: Inter;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 38.73px;
+  text-align: center;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6431372549);
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
 }/*# sourceMappingURL=style.css.map */
