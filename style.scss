@@ -33,11 +33,6 @@ html {
   ol, ul {
     list-style: none;
   }
-  
-  img {
-    max-width: 100%;
-    height: auto;
-  }
 
   header,footer {
     background-color: #141517;
@@ -139,12 +134,12 @@ html {
     font-size: 1.8rem;
   }
   input[type="search"] {
-    outline: 0; // <-- shold probably remove this for better accessibility, adding for demo aesthetics for now.
+    outline: 0; 
     width: 100%;
     background: var(--color-light);
     padding: 0 1.6rem;
     border-radius: var(--rad);
-    appearance: none; //for iOS input[type="search"] roundedness issue. border-radius alone doesn't work
+    appearance: none; 
     transition: all var(--dur) var(--bez);
     transition-property: width, border-radius;
     z-index: 1;
@@ -177,29 +172,50 @@ html {
     overflow: hidden;
   }
 
-.cards {
-    display: flex;
-    padding: 20px;
-    gap: 20px;
-
-    .card {
-position: relative;
-        // &:hover {
-        //     opacity: 0.1;
-
-        // }
-
-        img {
-            width: 100%;
-            height: 351px;  
-            object-fit: cover;
-            &:hover {
-              opacity: 0.1;
+  .swiper {
+    width: 1110px;
+    height: 300px;
+  }
   
-          }
-        }
-    }
+
+  .card {
+    position: relative;
+    width: 100%;
+
 }
+
+.movie-image {
+    width: 100%;
+    height: 351px;
+    object-fit: cover;
+}
+
+.info-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Cacher les informations au départ */
+    transition: opacity 0.3s ease;
+    text-align: center;
+}
+
+.card:hover .info-overlay {
+    opacity: 1; /* Afficher les informations lors du survol */
+}
+
+.info-overlay h3,
+.info-overlay p {
+    margin: 5px 0;
+}
+
 
 .sliderLatest, .sliderResult {
   margin-bottom: 50px;
@@ -253,7 +269,7 @@ position: relative;
   left: 0%;
   top: 0%;
 
-  h2 {
+  h3 {
     font-family: Inter;
   font-size: 20px;
   font-weight: 700;
@@ -316,4 +332,63 @@ position: relative;
 
 .visible {
   visibility: visible;
+}
+
+/* Style du modal */
+.movie-modal {
+  display: none; /* Par défaut, le modal est caché */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+
+  h2 {
+    color: var(--color-brand);
+    font-weight: 700;
+    text-align: center;
+  }
+
+  strong{
+    color: var(--color-brand);
+    font-size: large;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.movie-modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #3c3c3c60;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 80%;
+  color: #000000;
+}
+
+.movie-modal-content img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  color: #333;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #ff0000;
 }

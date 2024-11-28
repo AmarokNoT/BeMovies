@@ -3,105 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href=" https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css " rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
     <title>Document</title>
 </head>
 <body>
-    <div class="overlay hidden"></div>
+    <div id="overlay" class="overlay hidden"></div>
+    <!-- Modal de détails du film -->
+    <div id="movieModal" class="movie-modal">
+        <div class="movie-modal-content">
+        <span id="closeModal" class="close">&times;</span>
+        <div id="movieDetails">
+            <img id="movieModalImage" src="" alt="">
+            <h2 id="movieModalTitle"></h2>
+            <p id="movieModalDescription"></p>
+            <p><strong>Genres:</strong> <span id="movieModalGenres"></span></p>
+            <p><strong>Date de sortie:</strong> <span id="movieModalReleaseDate"></span></p>
+            <p><strong>Note:</strong> <span id="movieModalVoteAverage"></span></p>
+        </div>
+        </div>
+    </div>
+  
     <header>
         <div class="navbar">
             <div class="logoSite">
                 <p src="" alt="" class="logo"><span>be</span>movies</p>
             </div>
             <ul class="nav">
-                <li>Search</li>
-                <li>Latest</li>
-                <li>Genres</li>
+                <li><a href="#searchForm">Search</a></li>
+                <li><a href="#latestReleases">Latest</a></li>
+                <li><a href="#genre">Genres</a></li>
                 <li>Register</li>
                 <li>Signin</li>
             </ul>
         </div>
     </header>
     <div class="container">
-        <div class="searchBar">
+        <div id="searchForm" class="searchBar">
             <form onsubmit="event.preventDefault();" role="search">
                 <label for="search">Search for stuff</label>
-                <input id="search" type="search" placeholder="Search..." autofocus required />
+                <input id="searchInput" type="search" placeholder="Search..." autofocus required />
                 <button type="submit">Go</button>    
             </form>
         </div>
+
         <div class="sliderResult">
-            <h3>result for ''</h3>
-            <div id="#slider1" class="splide" aria-label="Splide Basic HTML Example">
-                <div class="splide__track">
-                    <div class="cards splide__list  ">
-                        <div class="card splide__slide ">
-                            <img src="asset/ai-generated-8520107_1280.jpg" alt="">
-                            <div class="infos">
-                                <h2>Naruto</h2>
-                                <p class="year">1993</p>
-                                <p class="genre">seinen</p>
-                                <i class="fa-solid fa-star"></i>
-                                <p class="note">4.6</p>
-                            </div>
-                        </div>
-                        <div class="card splide__slide ">
-                            <img src="asset/ai-generated-8520107_1280.jpg" alt="">
-                        </div>
-                        <div class="card splide__slide ">
-                            <img src="asset/ai-generated-8520107_1280.jpg" alt="">
-                        </div>
+            <h3>Result for search</h3>
+                <div class="swiper">
+                    <div id="movieCards" class="cards swiper-wrapper">
+                        <!-- <div class="card swiper-slide">
+                                <img src="asset/ai-generated-8520107_1280.jpg" alt="" class="movie-image">
+                                <div class="info-overlay infos">
+                                    <h3>Movie Title</h3>
+                                    <p class="year">2024</p>
+                                    <p class="genre">Action, Drama</p>
+                                    <i class="fa-solid fa-star"></i>
+                                    <p class="note">8.5</p>
+                                </div>
+                        </div> -->
                     </div>
+                    <div class="swiper-pagination"></div>
                 </div>
-            </div> 
+            
         </div>
-        
-        <div class="sliderLatest">
-            <h3>latest releases</h3>
-            <div id="#slider2" class="splide" aria-label="Splide Basic HTML Example">
-                <div class="splide__track">
-                    <div class="cards splide__list  ">
-                        <div class="card splide__slide ">
-                            <img src="asset/ai-generated-8520107_1280.jpg" alt="">
-                        </div>
-                        <div class="card splide__slide ">
-                            <img src="asset/ninja-7701126_1280.jpg" alt="">
-                        </div>
-                        <div class="card splide__slide ">
-                            <img src="asset/sunset-7628289_1280.jpg" alt="">
-                        </div>
-                    </div>
+        <div id="latestReleases" class="latest-releases">
+             <h3>Latest Releases</h3>
+             <div class="swiper">
+                <div id="MoviesLatest" class="cards swiper-wrapper">
+               
                 </div>
-            </div> 
-        </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>        
         <div class="sliderGenre">
-            <h3>Movies by genre</h3>
+            <h3 id="genre">Movies by genre</h3>
                 <ul class="movieNav">
-                    <li>Comedy</li>
-                    <li>Drama</li>
-                    <li>Action</li>
-                    <li>Fantasy</li>
-                    <li>Animation</li>
+                    <li data-genre-id="35">Comedy</li>
+                    <li data-genre-id="18">Drama</li>
+                    <li data-genre-id="28">Action</li>
+                    <li data-genre-id="14">Fantasy</li>
+                    <li data-genre-id="16">Animation</li>
                 </ul>
                 <hr>
       
-                <div id="#slider3" class="splide" aria-label="Splide Basic HTML Example">
-                    <div class="splide__track">
-                        <div class="cards splide__list  ">
-                            <div class="card splide__slide ">
-                                <img src="asset/ai-generated-8520107_1280.jpg" alt="">
-                            </div>
-                            <div class="card splide__slide ">
-                                <img src="asset/ninja-7701126_1280.jpg" alt="">
-                            </div>
-                            <div class="card splide__slide ">
-                                <img src="asset/sunset-7628289_1280.jpg" alt="">
-                            </div>
-                        </div>
+                <div class="swiper">
+                    <div id="genreResults" class="cards swiper-wrapper">
+                   
                     </div>
-                </div> 
-        </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+        </div> 
+    </div>
 
     </div>
     <footer>
@@ -110,9 +105,9 @@
                 <p src="" alt="" class="logo"><span>be</span>movies</p>
             </div>
             <ul class="nav">
-                <li>Search</li>
-                <li>Latest</li>
-                <li>Genres</li>
+                <li><a href="#searchForm">Search</a></li>
+                <li><a href="#latestReleases">Latest</a></li>
+                <li><a href="#genre">Genres</a></li>
                 <li>Register</li>
                 <li>Sign in</li>
             </ul>
@@ -122,20 +117,7 @@
         </div>
     </footer>
     <script src="https://kit.fontawesome.com/e54148ef25.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
-    <script>
-        document.addEventListener( 'DOMContentLoaded', function() {
-            var elms = document.getElementsByClassName( 'splide' );
-
-            for ( var i = 0; i < elms.length; i++ ) {
-            new Splide( elms[ i ], {
-                type   : 'loop',
-                perPage: 5,
-                focus  : 'center',
-            } ).mount();
-            }
-        } );
-    </script>
 </body>
 </html>

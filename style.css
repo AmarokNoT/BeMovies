@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
 :root {
   --rad: .7rem;
@@ -31,11 +32,6 @@ body, h1, h2, h3, h4, h5, h6, p, ol, ul {
 
 ol, ul {
   list-style: none;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
 }
 
 header, footer {
@@ -182,22 +178,47 @@ label {
   overflow: hidden;
 }
 
-.cards {
-  display: flex;
-  padding: 20px;
-  gap: 20px;
+.swiper {
+  width: 1110px;
+  height: 300px;
 }
-.cards .card {
+
+.card {
   position: relative;
+  width: 100%;
 }
-.cards .card img {
+
+.movie-image {
   width: 100%;
   height: 351px;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.cards .card img:hover {
-  opacity: 0.1;
+
+.info-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* Cacher les informations au départ */
+  transition: opacity 0.3s ease;
+  text-align: center;
+}
+
+.card:hover .info-overlay {
+  opacity: 1; /* Afficher les informations lors du survol */
+}
+
+.info-overlay h3,
+.info-overlay p {
+  margin: 5px 0;
 }
 
 .sliderLatest, .sliderResult {
@@ -245,7 +266,7 @@ label {
   left: 0%;
   top: 0%;
 }
-.infos h2 {
+.infos h3 {
   font-family: Inter;
   font-size: 20px;
   font-weight: 700;
@@ -296,4 +317,61 @@ label {
 
 .visible {
   visibility: visible;
+}
+
+/* Style du modal */
+.movie-modal {
+  display: none; /* Par défaut, le modal est caché */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+}
+.movie-modal h2 {
+  color: var(--color-brand);
+  font-weight: 700;
+  text-align: center;
+}
+.movie-modal strong {
+  color: var(--color-brand);
+  font-size: large;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.movie-modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(60, 60, 60, 0.3764705882);
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 80%;
+  color: #000000;
+}
+
+.movie-modal-content img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  color: #333;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #ff0000;
 }/*# sourceMappingURL=style.css.map */
