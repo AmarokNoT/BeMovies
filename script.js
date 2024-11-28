@@ -71,6 +71,7 @@ function showMovieDetails(movie) {
   const modalGenres = document.getElementById('movieModalGenres');
   const modalReleaseDate = document.getElementById('movieModalReleaseDate');
   const modalVoteAverage = document.getElementById('movieModalVoteAverage');
+  const modalCast = document.getElementById('movieModalCast'); // Ajout du nouvel élément pour le cast
 
   // Injection des données dans le modal
   modalImage.src = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
@@ -81,8 +82,26 @@ function showMovieDetails(movie) {
   const genres = movie.genre_ids.map(id => genreMap[id] || 'Genre inconnu').join(', ');
   modalGenres.textContent = genres;
   
-  modalReleaseDate.textContent = movie.release_date || 'Date non disponible';
+  modalReleaseDate.textContent = `${movie.release_date ? movie.release_date.split('-')[0] : 'N/A'}`;
   modalVoteAverage.textContent = movie.vote_average || 'Non évalué';
+
+  // Récupérer les détails du cast
+  fetch(`https://api.themoviedb.org/3/movie/${movie.id}/credits?api_key=879df38bcb82e1e5c88ec466e42bb6cf`)
+    .then((response) => response.json())
+    .then((data) => {
+      // Affichage du cast dans le modal
+      const cast = data.cast;
+      if (cast.length > 0) {
+        const castList = cast.slice(0, 5).map(actor => actor.name).join(', ');
+        modalCast.innerHTML = `Cast: ${castList}`;
+      } else {
+        modalCast.innerHTML = 'Cast: Aucune information sur le cast disponible.';
+      }
+    })
+    .catch((error) => {
+      console.error('Erreur lors de la récupération du cast:', error);
+      modalCast.innerHTML = 'Cast: Impossible de récupérer les informations du cast.';
+    });
 
   // Affichage du modal
   modal.style.display = 'block';

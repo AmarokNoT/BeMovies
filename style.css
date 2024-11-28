@@ -332,12 +332,55 @@ label {
 }
 .movie-modal h2 {
   color: var(--color-brand);
+  font-family: Inria Sans;
+  font-size: 20px;
   font-weight: 700;
-  text-align: center;
+  line-height: 23.98px;
+  letter-spacing: 0.03em;
+  text-align: left;
+  text-underline-position: from-font;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+  text-transform: uppercase;
+}
+.movie-modal #movieModalReleaseDate {
+  font-family: Inria Sans;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16.79px;
+  letter-spacing: 0.03em;
+  text-align: left;
+  text-underline-position: from-font;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+}
+.movie-modal #movieModalGenres {
+  font-family: Inria Sans;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+  letter-spacing: 0.03em;
+  text-align: left;
+  text-underline-position: from-font;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+  color: #ffffff;
 }
 .movie-modal strong {
   color: var(--color-brand);
-  font-size: large;
+  font-size: larger;
+}
+.movie-modal #movieModalDescription, .movie-modal #movieModalCast {
+  font-family: Inria Sans;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+  letter-spacing: 0.03em;
+  text-align: left;
+  text-underline-position: from-font;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+  color: rgba(255, 255, 255, 0.6862745098);
 }
 
 a {
@@ -346,20 +389,34 @@ a {
 }
 
 .movie-modal-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(60, 60, 60, 0.3764705882);
+  background: #000000;
   padding: 20px;
   border-radius: 10px;
-  max-width: 500px;
-  width: 80%;
+  width: 742px;
+  height: 526px;
   color: #000000;
+}
+.movie-modal-content #movieDetails {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.movie-modal-content #movieDetails .content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .movie-modal-content img {
-  width: 100%;
+  width: 180%;
   border-radius: 5px;
 }
 
